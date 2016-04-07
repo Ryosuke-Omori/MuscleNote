@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7BAF49051CB6366E00FB1439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49041CB6366E00FB1439 /* AppDelegate.swift */; };
+		7BAF49071CB6366E00FB1439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49061CB6366E00FB1439 /* ViewController.swift */; };
+		7BAF490A1CB6366E00FB1439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BAF49081CB6366E00FB1439 /* Main.storyboard */; };
+		7BAF490C1CB6366E00FB1439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BAF490B1CB6366E00FB1439 /* Assets.xcassets */; };
+		7BAF490F1CB6366E00FB1439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BAF490D1CB6366E00FB1439 /* LaunchScreen.storyboard */; };
+		7BAF491A1CB6366E00FB1439 /* MuscleNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49191CB6366E00FB1439 /* MuscleNoteTests.swift */; };
+		7BAF49251CB6366E00FB1439 /* MuscleNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49241CB6366E00FB1439 /* MuscleNoteUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7BAF49161CB6366E00FB1439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BAF48F91CB6366E00FB1439 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BAF49001CB6366E00FB1439;
+			remoteInfo = MuscleNote;
+		};
+		7BAF49211CB6366E00FB1439 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7BAF48F91CB6366E00FB1439 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7BAF49001CB6366E00FB1439;
+			remoteInfo = MuscleNote;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7BAF49011CB6366E00FB1439 /* MuscleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BAF49041CB6366E00FB1439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7BAF49061CB6366E00FB1439 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7BAF49091CB6366E00FB1439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7BAF490B1CB6366E00FB1439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7BAF490E1CB6366E00FB1439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7BAF49101CB6366E00FB1439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BAF49151CB6366E00FB1439 /* MuscleNoteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuscleNoteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BAF49191CB6366E00FB1439 /* MuscleNoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleNoteTests.swift; sourceTree = "<group>"; };
+		7BAF491B1CB6366E00FB1439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BAF49201CB6366E00FB1439 /* MuscleNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuscleNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BAF49241CB6366E00FB1439 /* MuscleNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleNoteUITests.swift; sourceTree = "<group>"; };
+		7BAF49261CB6366E00FB1439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7BAF48FE1CB6366E00FB1439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BAF49121CB6366E00FB1439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BAF491D1CB6366E00FB1439 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7BAF48F81CB6366E00FB1439 = {
+			isa = PBXGroup;
+			children = (
+				7BAF49031CB6366E00FB1439 /* MuscleNote */,
+				7BAF49181CB6366E00FB1439 /* MuscleNoteTests */,
+				7BAF49231CB6366E00FB1439 /* MuscleNoteUITests */,
+				7BAF49021CB6366E00FB1439 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7BAF49021CB6366E00FB1439 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7BAF49011CB6366E00FB1439 /* MuscleNote.app */,
+				7BAF49151CB6366E00FB1439 /* MuscleNoteTests.xctest */,
+				7BAF49201CB6366E00FB1439 /* MuscleNoteUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7BAF49031CB6366E00FB1439 /* MuscleNote */ = {
+			isa = PBXGroup;
+			children = (
+				7BAF49041CB6366E00FB1439 /* AppDelegate.swift */,
+				7BAF49061CB6366E00FB1439 /* ViewController.swift */,
+				7BAF49081CB6366E00FB1439 /* Main.storyboard */,
+				7BAF490B1CB6366E00FB1439 /* Assets.xcassets */,
+				7BAF490D1CB6366E00FB1439 /* LaunchScreen.storyboard */,
+				7BAF49101CB6366E00FB1439 /* Info.plist */,
+			);
+			path = MuscleNote;
+			sourceTree = "<group>";
+		};
+		7BAF49181CB6366E00FB1439 /* MuscleNoteTests */ = {
+			isa = PBXGroup;
+			children = (
+				7BAF49191CB6366E00FB1439 /* MuscleNoteTests.swift */,
+				7BAF491B1CB6366E00FB1439 /* Info.plist */,
+			);
+			path = MuscleNoteTests;
+			sourceTree = "<group>";
+		};
+		7BAF49231CB6366E00FB1439 /* MuscleNoteUITests */ = {
+			isa = PBXGroup;
+			children = (
+				7BAF49241CB6366E00FB1439 /* MuscleNoteUITests.swift */,
+				7BAF49261CB6366E00FB1439 /* Info.plist */,
+			);
+			path = MuscleNoteUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7BAF49001CB6366E00FB1439 /* MuscleNote */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BAF49291CB6366E00FB1439 /* Build configuration list for PBXNativeTarget "MuscleNote" */;
+			buildPhases = (
+				7BAF48FD1CB6366E00FB1439 /* Sources */,
+				7BAF48FE1CB6366E00FB1439 /* Frameworks */,
+				7BAF48FF1CB6366E00FB1439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MuscleNote;
+			productName = MuscleNote;
+			productReference = 7BAF49011CB6366E00FB1439 /* MuscleNote.app */;
+			productType = "com.apple.product-type.application";
+		};
+		7BAF49141CB6366E00FB1439 /* MuscleNoteTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BAF492C1CB6366E00FB1439 /* Build configuration list for PBXNativeTarget "MuscleNoteTests" */;
+			buildPhases = (
+				7BAF49111CB6366E00FB1439 /* Sources */,
+				7BAF49121CB6366E00FB1439 /* Frameworks */,
+				7BAF49131CB6366E00FB1439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7BAF49171CB6366E00FB1439 /* PBXTargetDependency */,
+			);
+			name = MuscleNoteTests;
+			productName = MuscleNoteTests;
+			productReference = 7BAF49151CB6366E00FB1439 /* MuscleNoteTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7BAF491F1CB6366E00FB1439 /* MuscleNoteUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7BAF492F1CB6366E00FB1439 /* Build configuration list for PBXNativeTarget "MuscleNoteUITests" */;
+			buildPhases = (
+				7BAF491C1CB6366E00FB1439 /* Sources */,
+				7BAF491D1CB6366E00FB1439 /* Frameworks */,
+				7BAF491E1CB6366E00FB1439 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7BAF49221CB6366E00FB1439 /* PBXTargetDependency */,
+			);
+			name = MuscleNoteUITests;
+			productName = MuscleNoteUITests;
+			productReference = 7BAF49201CB6366E00FB1439 /* MuscleNoteUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7BAF48F91CB6366E00FB1439 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = RyosukeOmori;
+				TargetAttributes = {
+					7BAF49001CB6366E00FB1439 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					7BAF49141CB6366E00FB1439 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 7BAF49001CB6366E00FB1439;
+					};
+					7BAF491F1CB6366E00FB1439 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 7BAF49001CB6366E00FB1439;
+					};
+				};
+			};
+			buildConfigurationList = 7BAF48FC1CB6366E00FB1439 /* Build configuration list for PBXProject "MuscleNote" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7BAF48F81CB6366E00FB1439;
+			productRefGroup = 7BAF49021CB6366E00FB1439 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7BAF49001CB6366E00FB1439 /* MuscleNote */,
+				7BAF49141CB6366E00FB1439 /* MuscleNoteTests */,
+				7BAF491F1CB6366E00FB1439 /* MuscleNoteUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7BAF48FF1CB6366E00FB1439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BAF490F1CB6366E00FB1439 /* LaunchScreen.storyboard in Resources */,
+				7BAF490C1CB6366E00FB1439 /* Assets.xcassets in Resources */,
+				7BAF490A1CB6366E00FB1439 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BAF49131CB6366E00FB1439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BAF491E1CB6366E00FB1439 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7BAF48FD1CB6366E00FB1439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BAF49071CB6366E00FB1439 /* ViewController.swift in Sources */,
+				7BAF49051CB6366E00FB1439 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BAF49111CB6366E00FB1439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BAF491A1CB6366E00FB1439 /* MuscleNoteTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7BAF491C1CB6366E00FB1439 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7BAF49251CB6366E00FB1439 /* MuscleNoteUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7BAF49171CB6366E00FB1439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BAF49001CB6366E00FB1439 /* MuscleNote */;
+			targetProxy = 7BAF49161CB6366E00FB1439 /* PBXContainerItemProxy */;
+		};
+		7BAF49221CB6366E00FB1439 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7BAF49001CB6366E00FB1439 /* MuscleNote */;
+			targetProxy = 7BAF49211CB6366E00FB1439 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7BAF49081CB6366E00FB1439 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BAF49091CB6366E00FB1439 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7BAF490D1CB6366E00FB1439 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7BAF490E1CB6366E00FB1439 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7BAF49271CB6366E00FB1439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		7BAF49281CB6366E00FB1439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7BAF492A1CB6366E00FB1439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MuscleNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ryosuke.study.MuscleNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		7BAF492B1CB6366E00FB1439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = MuscleNote/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ryosuke.study.MuscleNote;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		7BAF492D1CB6366E00FB1439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MuscleNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ryosuke.study.MuscleNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuscleNote.app/MuscleNote";
+			};
+			name = Debug;
+		};
+		7BAF492E1CB6366E00FB1439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = MuscleNoteTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ryosuke.study.MuscleNoteTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MuscleNote.app/MuscleNote";
+			};
+			name = Release;
+		};
+		7BAF49301CB6366E00FB1439 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MuscleNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ryosuke.study.MuscleNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MuscleNote;
+			};
+			name = Debug;
+		};
+		7BAF49311CB6366E00FB1439 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = MuscleNoteUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ryosuke.study.MuscleNoteUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = MuscleNote;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7BAF48FC1CB6366E00FB1439 /* Build configuration list for PBXProject "MuscleNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BAF49271CB6366E00FB1439 /* Debug */,
+				7BAF49281CB6366E00FB1439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7BAF49291CB6366E00FB1439 /* Build configuration list for PBXNativeTarget "MuscleNote" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BAF492A1CB6366E00FB1439 /* Debug */,
+				7BAF492B1CB6366E00FB1439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7BAF492C1CB6366E00FB1439 /* Build configuration list for PBXNativeTarget "MuscleNoteTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BAF492D1CB6366E00FB1439 /* Debug */,
+				7BAF492E1CB6366E00FB1439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		7BAF492F1CB6366E00FB1439 /* Build configuration list for PBXNativeTarget "MuscleNoteUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7BAF49301CB6366E00FB1439 /* Debug */,
+				7BAF49311CB6366E00FB1439 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7BAF48F91CB6366E00FB1439 /* Project object */;
+}
