@@ -1,25 +1,224 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="X8Q-aB-okO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Calculate View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RMCalculateViewController" customModule="MuscleNote" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="IKa-X5-yEa"/>
+                        <viewControllerLayoutGuide type="bottom" id="8be-0w-9Q2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BAh-7o-Hag" userLabel="DummyView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muscleNoteTop" translatesAutoresizingMaskIntoConstraints="NO" id="cAd-DH-QfS" userLabel="TopImageView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5l7-Eg-z6K" userLabel="RMCalculator">
+                                <rect key="frame" x="10" y="30" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="5l7-Eg-z6K" secondAttribute="height" multiplier="1:1" id="hI4-uA-PZU"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="muscleNoteRegistButton">
+                                    <color key="titleShadowColor" red="0.74878587935804264" green="0.84024618961949593" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="3Du-FA-Epq" kind="show" id="sBn-yC-Tkh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7Z-yx-xuM" userLabel="NameButton">
+                                <rect key="frame" x="245" y="90" width="100" height="30"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="2uT-uR-Zqq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBa-OH-0xs" userLabel="MuscleHypertrophyButton">
+                                <rect key="frame" x="75" y="538" width="300" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="hBa-OH-0xs" secondAttribute="height" multiplier="300:49" id="4tU-fp-Hs6"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="muscleNoteMenuHypertrophy"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EH0-CK-0XY" userLabel="MuscleStrengtheningButton">
+                                <rect key="frame" x="75" y="598" width="300" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="EH0-CK-0XY" secondAttribute="height" multiplier="300:49" id="9S6-Ij-AvB"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="muscleNoteMenuStrengthening"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hBa-OH-0xs" firstAttribute="trailing" secondItem="EH0-CK-0XY" secondAttribute="trailing" id="86C-QX-z5l"/>
+                            <constraint firstItem="cAd-DH-QfS" firstAttribute="width" secondItem="BAh-7o-Hag" secondAttribute="width" id="AHh-hH-nmW"/>
+                            <constraint firstItem="B7Z-yx-xuM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-30" id="AhQ-iW-PA3"/>
+                            <constraint firstItem="cAd-DH-QfS" firstAttribute="top" secondItem="BAh-7o-Hag" secondAttribute="top" id="Ds4-CQ-XJJ"/>
+                            <constraint firstItem="5l7-Eg-z6K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="H1s-LH-guC"/>
+                            <constraint firstItem="5l7-Eg-z6K" firstAttribute="top" secondItem="BAh-7o-Hag" secondAttribute="top" constant="30" id="KJo-c6-Eb1"/>
+                            <constraint firstItem="5l7-Eg-z6K" firstAttribute="height" secondItem="BAh-7o-Hag" secondAttribute="height" multiplier="0.15" id="QDd-Va-3jS"/>
+                            <constraint firstItem="BAh-7o-Hag" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="SSh-Xx-RtB"/>
+                            <constraint firstItem="B7Z-yx-xuM" firstAttribute="top" secondItem="5l7-Eg-z6K" secondAttribute="centerY" constant="10" id="TD8-m4-RM0"/>
+                            <constraint firstItem="5l7-Eg-z6K" firstAttribute="width" secondItem="BAh-7o-Hag" secondAttribute="height" multiplier="0.15" id="aeX-ok-lni"/>
+                            <constraint firstItem="EH0-CK-0XY" firstAttribute="width" secondItem="BAh-7o-Hag" secondAttribute="width" multiplier="0.8" id="bxy-E6-3Yc"/>
+                            <constraint firstItem="cAd-DH-QfS" firstAttribute="centerX" secondItem="BAh-7o-Hag" secondAttribute="centerX" id="eJV-aA-yOB"/>
+                            <constraint firstItem="cAd-DH-QfS" firstAttribute="height" secondItem="BAh-7o-Hag" secondAttribute="height" id="ePw-C1-1pQ"/>
+                            <constraint firstItem="EH0-CK-0XY" firstAttribute="bottom" secondItem="BAh-7o-Hag" secondAttribute="bottom" constant="-20" id="gX3-GL-mU6"/>
+                            <constraint firstItem="cAd-DH-QfS" firstAttribute="width" secondItem="BAh-7o-Hag" secondAttribute="height" multiplier="375:667" id="j3T-Nm-vMx"/>
+                            <constraint firstItem="BAh-7o-Hag" firstAttribute="bottom" secondItem="8be-0w-9Q2" secondAttribute="top" id="l40-bJ-CF4"/>
+                            <constraint firstItem="EH0-CK-0XY" firstAttribute="trailing" secondItem="BAh-7o-Hag" secondAttribute="trailing" id="nkj-h9-1kQ"/>
+                            <constraint firstItem="BAh-7o-Hag" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="r5D-1u-Dfs"/>
+                            <constraint firstItem="hBa-OH-0xs" firstAttribute="width" secondItem="EH0-CK-0XY" secondAttribute="width" id="s3B-mK-H0U"/>
+                            <constraint firstItem="hBa-OH-0xs" firstAttribute="bottom" secondItem="EH0-CK-0XY" secondAttribute="bottom" constant="-60" id="v0X-03-iGF"/>
+                            <constraint firstItem="BAh-7o-Hag" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="vZx-kL-4CQ"/>
+                            <constraint firstItem="BAh-7o-Hag" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zM7-Tb-0tb"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="V9s-ck-lGF"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="NameButton" destination="B7Z-yx-xuM" id="8jj-mS-laT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1107.5" y="259.5"/>
+        </scene>
+        <!--Registration View Controller-->
+        <scene sceneID="TV9-1Z-FYl">
+            <objects>
+                <viewController id="3Du-FA-Epq" customClass="RegistrationViewController" customModule="MuscleNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="e5b-nC-uUJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="BJp-aK-pbU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hNn-6W-LKE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JlV-m3-l2V" userLabel="DummyView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muscleNoteRegistView" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-kn-yT8">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-D9-Vcv" userLabel="ButtonSpacer1">
+                                <rect key="frame" x="187" y="64" width="0.0" height="181"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="U2d-fT-1Ph"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1I8-WB-qDE" userLabel="RegistButton">
+                                <rect key="frame" x="126" y="245" width="122" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="1I8-WB-qDE" secondAttribute="height" multiplier="2:1" id="6QW-hK-Yi3"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="MuscleNoteRegistMenu"/>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NLp-5g-z10" userLabel="ButtonSpacer2">
+                                <rect key="frame" x="187" y="306" width="0.0" height="181"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="egA-q1-DM4" userLabel="UpdateButton">
+                                <rect key="frame" x="126" y="487" width="122" height="61"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="egA-q1-DM4" secondAttribute="height" multiplier="2:1" id="RO8-Ot-Kwv"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="MuscleNoteUpdateMenu"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muscleNoteRegistrationViewMenu" translatesAutoresizingMaskIntoConstraints="NO" id="goJ-vD-mSD">
+                                <rect key="frame" x="19" y="65" width="337" height="180"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="goJ-vD-mSD" secondAttribute="height" multiplier="15:8" id="oZc-tl-vrC"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1I8-WB-qDE" firstAttribute="top" secondItem="CVO-D9-Vcv" secondAttribute="bottom" id="40T-6P-y22"/>
+                            <constraint firstItem="CVO-D9-Vcv" firstAttribute="height" secondItem="JlV-m3-l2V" secondAttribute="height" multiplier="0.3" id="9p1-wf-A1z"/>
+                            <constraint firstItem="Chk-kn-yT8" firstAttribute="height" secondItem="JlV-m3-l2V" secondAttribute="height" id="AJ4-oW-EPa"/>
+                            <constraint firstItem="JlV-m3-l2V" firstAttribute="leading" secondItem="hNn-6W-LKE" secondAttribute="leading" id="ArL-3c-yJ3"/>
+                            <constraint firstItem="NLp-5g-z10" firstAttribute="top" secondItem="1I8-WB-qDE" secondAttribute="bottom" id="BWr-dX-aeP"/>
+                            <constraint firstItem="goJ-vD-mSD" firstAttribute="centerX" secondItem="CVO-D9-Vcv" secondAttribute="centerX" id="CQ7-lS-Vs8"/>
+                            <constraint firstItem="Chk-kn-yT8" firstAttribute="top" secondItem="JlV-m3-l2V" secondAttribute="top" id="FMQ-VP-18N"/>
+                            <constraint firstItem="egA-q1-DM4" firstAttribute="centerX" secondItem="CVO-D9-Vcv" secondAttribute="centerX" id="FsA-a3-ATd"/>
+                            <constraint firstItem="CVO-D9-Vcv" firstAttribute="centerX" secondItem="JlV-m3-l2V" secondAttribute="centerX" id="Gv2-eo-W7h"/>
+                            <constraint firstItem="Chk-kn-yT8" firstAttribute="leading" secondItem="JlV-m3-l2V" secondAttribute="leading" id="HYm-SS-z0k"/>
+                            <constraint firstItem="goJ-vD-mSD" firstAttribute="centerY" secondItem="CVO-D9-Vcv" secondAttribute="centerY" id="Jb6-Bk-ipy"/>
+                            <constraint firstItem="Chk-kn-yT8" firstAttribute="width" secondItem="JlV-m3-l2V" secondAttribute="width" id="KGP-jB-qdS"/>
+                            <constraint firstItem="goJ-vD-mSD" firstAttribute="width" secondItem="JlV-m3-l2V" secondAttribute="width" multiplier="0.9" id="KLi-tK-wRb"/>
+                            <constraint firstItem="JlV-m3-l2V" firstAttribute="bottom" secondItem="BJp-aK-pbU" secondAttribute="top" id="RSX-ER-AwY"/>
+                            <constraint firstItem="JlV-m3-l2V" firstAttribute="trailing" secondItem="hNn-6W-LKE" secondAttribute="trailing" id="Rmg-0F-9Ie"/>
+                            <constraint firstItem="NLp-5g-z10" firstAttribute="height" secondItem="CVO-D9-Vcv" secondAttribute="height" id="aL8-Am-shz"/>
+                            <constraint firstItem="JlV-m3-l2V" firstAttribute="top" secondItem="e5b-nC-uUJ" secondAttribute="bottom" id="dD3-Rk-67Z"/>
+                            <constraint firstItem="1I8-WB-qDE" firstAttribute="centerX" secondItem="CVO-D9-Vcv" secondAttribute="centerX" id="dDa-h4-1TT"/>
+                            <constraint firstItem="1I8-WB-qDE" firstAttribute="height" secondItem="JlV-m3-l2V" secondAttribute="height" multiplier="0.1" id="hSi-w2-1uD"/>
+                            <constraint firstItem="egA-q1-DM4" firstAttribute="height" secondItem="1I8-WB-qDE" secondAttribute="height" id="iff-eY-X6F"/>
+                            <constraint firstItem="egA-q1-DM4" firstAttribute="top" secondItem="NLp-5g-z10" secondAttribute="bottom" id="rZp-XN-svk"/>
+                            <constraint firstItem="CVO-D9-Vcv" firstAttribute="top" secondItem="JlV-m3-l2V" secondAttribute="top" id="tPa-r0-lea"/>
+                            <constraint firstItem="NLp-5g-z10" firstAttribute="centerX" secondItem="CVO-D9-Vcv" secondAttribute="centerX" id="ugO-3Z-yJ6"/>
+                            <constraint firstItem="Chk-kn-yT8" firstAttribute="width" secondItem="JlV-m3-l2V" secondAttribute="height" multiplier="125:201" id="xvE-Av-tFE"/>
+                            <constraint firstItem="NLp-5g-z10" firstAttribute="width" secondItem="CVO-D9-Vcv" secondAttribute="width" id="y0Z-ix-MGF"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="registButton" destination="1I8-WB-qDE" id="3AL-SG-yb4"/>
+                        <outlet property="updateButton" destination="egA-q1-DM4" id="aLk-9p-J3S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlC-Ga-gne" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1614.5" y="259.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="p7q-PS-Aj3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="X8Q-aB-okO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NjV-5c-okg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="VvD-72-5bb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gyt-p6-wgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="295" y="259"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="MuscleNoteRegistMenu" width="400" height="200"/>
+        <image name="MuscleNoteUpdateMenu" width="400" height="200"/>
+        <image name="muscleNoteMenuHypertrophy" width="350" height="49"/>
+        <image name="muscleNoteMenuStrengthening" width="350" height="49"/>
+        <image name="muscleNoteRegistButton" width="400" height="400"/>
+        <image name="muscleNoteRegistView" width="750" height="1334"/>
+        <image name="muscleNoteRegistrationViewMenu" width="434" height="59"/>
+        <image name="muscleNoteTop" width="751" height="1334"/>
+    </resources>
 </document>

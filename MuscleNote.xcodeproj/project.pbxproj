@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7BAF49051CB6366E00FB1439 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49041CB6366E00FB1439 /* AppDelegate.swift */; };
-		7BAF49071CB6366E00FB1439 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49061CB6366E00FB1439 /* ViewController.swift */; };
+		7BAF49071CB6366E00FB1439 /* RMCalculateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49061CB6366E00FB1439 /* RMCalculateViewController.swift */; };
 		7BAF490A1CB6366E00FB1439 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BAF49081CB6366E00FB1439 /* Main.storyboard */; };
 		7BAF490C1CB6366E00FB1439 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BAF490B1CB6366E00FB1439 /* Assets.xcassets */; };
 		7BAF490F1CB6366E00FB1439 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BAF490D1CB6366E00FB1439 /* LaunchScreen.storyboard */; };
 		7BAF491A1CB6366E00FB1439 /* MuscleNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49191CB6366E00FB1439 /* MuscleNoteTests.swift */; };
 		7BAF49251CB6366E00FB1439 /* MuscleNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49241CB6366E00FB1439 /* MuscleNoteUITests.swift */; };
+		7BAF496F1CC4C3AF00FB1439 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF496E1CC4C3AF00FB1439 /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		7BAF49011CB6366E00FB1439 /* MuscleNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MuscleNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BAF49041CB6366E00FB1439 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7BAF49061CB6366E00FB1439 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7BAF49061CB6366E00FB1439 /* RMCalculateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMCalculateViewController.swift; sourceTree = "<group>"; };
 		7BAF49091CB6366E00FB1439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7BAF490B1CB6366E00FB1439 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7BAF490E1CB6366E00FB1439 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		7BAF49201CB6366E00FB1439 /* MuscleNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MuscleNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BAF49241CB6366E00FB1439 /* MuscleNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleNoteUITests.swift; sourceTree = "<group>"; };
 		7BAF49261CB6366E00FB1439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BAF496E1CC4C3AF00FB1439 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				7BAF49041CB6366E00FB1439 /* AppDelegate.swift */,
-				7BAF49061CB6366E00FB1439 /* ViewController.swift */,
+				7BAF49061CB6366E00FB1439 /* RMCalculateViewController.swift */,
+				7BAF496E1CC4C3AF00FB1439 /* RegistrationViewController.swift */,
 				7BAF49081CB6366E00FB1439 /* Main.storyboard */,
 				7BAF490B1CB6366E00FB1439 /* Assets.xcassets */,
 				7BAF490D1CB6366E00FB1439 /* LaunchScreen.storyboard */,
@@ -256,7 +259,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BAF49071CB6366E00FB1439 /* ViewController.swift in Sources */,
+				7BAF496F1CC4C3AF00FB1439 /* RegistrationViewController.swift in Sources */,
+				7BAF49071CB6366E00FB1439 /* RMCalculateViewController.swift in Sources */,
 				7BAF49051CB6366E00FB1439 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +486,7 @@
 				7BAF492B1CB6366E00FB1439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7BAF492C1CB6366E00FB1439 /* Build configuration list for PBXNativeTarget "MuscleNoteTests" */ = {
 			isa = XCConfigurationList;
@@ -490,6 +495,7 @@
 				7BAF492E1CB6366E00FB1439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7BAF492F1CB6366E00FB1439 /* Build configuration list for PBXNativeTarget "MuscleNoteUITests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +504,7 @@
 				7BAF49311CB6366E00FB1439 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
