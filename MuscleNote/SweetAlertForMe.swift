@@ -204,6 +204,28 @@ class SweetAlertForMe: SweetAlert {
     override func pressed(sender: UIButton!) {
         print("Called 'pressed()' in MustleNote!!!")
         
+        //weightTextFieldのtextチェック
+        if weightTextField.text?.characters.count != 0 {
+            let wStr: String = weightTextField.text!
+            let wPattern = "\\d+\\.\\d+"
+            if Regexp(wPattern).isMatch(wStr) {
+                print("weightTextField is OK!!!")
+            } else {
+                print("weightTextField is NO!!!!")
+            }
+        }
+        
+        //lepsTextFieldのtextチェック
+        if lepsTextField.text?.characters.count != 0 {
+            let lStr: String = lepsTextField.text!
+            let lPattern = "\\d+"
+            if Regexp(lPattern).isMatch(lStr) {
+                print("lepsTextField is OK!!!")
+            } else {
+                print("lepsTextField is NO!!!!")
+            }
+        }
+        
         super.pressed(sender)
     }
     
@@ -212,22 +234,15 @@ class SweetAlertForMe: SweetAlert {
     //returnが押された際の処理
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         switch textField.tag {
-        case TextFieldType.weight.hashValue:
-            if textField.text?.characters.count != 0 {
-                let str: String = textField.text!
-                let pattern = "\\d+\\.\\d+"
-                if Regexp(pattern).isMatch(str) {
-                    print("OK!!!")
-                } else {
-                    print("NO!!!!")
-                }
-            }
+        case weightTextField.tag.hashValue:
+            weightTextField.resignFirstResponder()      //weightTextFieldのキーボードを閉じる   ＊endEdidtingでも可
+            break
+        case lepsTextField.tag.hashValue:
+            lepsTextField.resignFirstResponder()
             break
         default:
             break
         }
-        weightTextField.resignFirstResponder()      //weightTextFieldのキーボードを閉じる   ＊endEdidtingでも可
-        
         return true                                 //trueだとDidEndOnExitイベントが発生、それが実装されていればさらにEditingDidEndイベントが発生する。
     }
     
@@ -236,7 +251,7 @@ class SweetAlertForMe: SweetAlert {
         //文字数制限をする
         switch textField.tag {
         case TextFieldType.weight.hashValue:
-            let maxInputLength: Int = 5;
+            let maxInputLength: Int = 6
             let str = textField.text! + string              //入力済みの文字と入力された文字を合わせて取得
             
             if str.characters.count < maxInputLength {
@@ -247,7 +262,6 @@ class SweetAlertForMe: SweetAlert {
         case TextFieldType.leps.hashValue:
             let maxInputLength: Int = 3;
             let str = textField.text! + string
-            
             let num = Int(str)
             
             if num < 11 && num > 0 {                                   //入力された値が11以上だとreject
