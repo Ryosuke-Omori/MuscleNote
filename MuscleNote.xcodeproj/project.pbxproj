@@ -15,6 +15,9 @@
 		7BAF491A1CB6366E00FB1439 /* MuscleNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49191CB6366E00FB1439 /* MuscleNoteTests.swift */; };
 		7BAF49251CB6366E00FB1439 /* MuscleNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49241CB6366E00FB1439 /* MuscleNoteUITests.swift */; };
 		7BAF496F1CC4C3AF00FB1439 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF496E1CC4C3AF00FB1439 /* RegistrationViewController.swift */; };
+		7BAF49751CE1D1EB00FB1439 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49741CE1D1EB00FB1439 /* SweetAlert.swift */; };
+		7BAF49ED1CE2DED000FB1439 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49EC1CE2DED000FB1439 /* CustomAlert.swift */; };
+		7BD7E6F51CEC56DC00127B68 /* SweetAlertForMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD7E6F41CEC56DC00127B68 /* SweetAlertForMe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		7BAF49241CB6366E00FB1439 /* MuscleNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuscleNoteUITests.swift; sourceTree = "<group>"; };
 		7BAF49261CB6366E00FB1439 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7BAF496E1CC4C3AF00FB1439 /* RegistrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		7BAF49741CE1D1EB00FB1439 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SweetAlert.swift; path = "../../../../Module/SweetAlert-iOS/SweetAlert/SweetAlert.swift"; sourceTree = "<group>"; };
+		7BAF49EC1CE2DED000FB1439 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAlert.swift; path = ../../../../Module/CustomAlertView/CustomAlertView/CustomAlert.swift; sourceTree = "<group>"; };
+		7BD7E6F41CEC56DC00127B68 /* SweetAlertForMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlertForMe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,9 @@
 				7BAF49041CB6366E00FB1439 /* AppDelegate.swift */,
 				7BAF49061CB6366E00FB1439 /* RMCalculateViewController.swift */,
 				7BAF496E1CC4C3AF00FB1439 /* RegistrationViewController.swift */,
+				7BAF49EC1CE2DED000FB1439 /* CustomAlert.swift */,
+				7BAF49741CE1D1EB00FB1439 /* SweetAlert.swift */,
+				7BD7E6F41CEC56DC00127B68 /* SweetAlertForMe.swift */,
 				7BAF49081CB6366E00FB1439 /* Main.storyboard */,
 				7BAF490B1CB6366E00FB1439 /* Assets.xcassets */,
 				7BAF490D1CB6366E00FB1439 /* LaunchScreen.storyboard */,
@@ -262,6 +271,9 @@
 				7BAF496F1CC4C3AF00FB1439 /* RegistrationViewController.swift in Sources */,
 				7BAF49071CB6366E00FB1439 /* RMCalculateViewController.swift in Sources */,
 				7BAF49051CB6366E00FB1439 /* AppDelegate.swift in Sources */,
+				7BD7E6F51CEC56DC00127B68 /* SweetAlertForMe.swift in Sources */,
+				7BAF49751CE1D1EB00FB1439 /* SweetAlert.swift in Sources */,
+				7BAF49ED1CE2DED000FB1439 /* CustomAlert.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

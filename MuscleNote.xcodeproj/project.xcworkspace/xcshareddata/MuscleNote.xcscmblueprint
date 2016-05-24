@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "9436B311705490C02F1F70AA7D0F9516B278F8DF",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "9436B311705490C02F1F70AA7D0F9516B278F8DF" : 0,
+    "8383E8AFC801341F0EDD60738B265CDEACD38A28" : 0,
+    "05630D693F59F7CEDACB6CAB0E4EA0A642C60427" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "6C480908-2372-49DC-AECA-F4DFBAD04702",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "9436B311705490C02F1F70AA7D0F9516B278F8DF" : "MuscleNote\/",
+    "8383E8AFC801341F0EDD60738B265CDEACD38A28" : "..\/..\/Module\/DOAlertController",
+    "05630D693F59F7CEDACB6CAB0E4EA0A642C60427" : "..\/..\/Module\/SweetAlert-iOS"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "MuscleNote",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "MuscleNote.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/codestergit\/SweetAlert-iOS.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "05630D693F59F7CEDACB6CAB0E4EA0A642C60427"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/okmr-d\/DOAlertController.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "8383E8AFC801341F0EDD60738B265CDEACD38A28"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Ryosuke-Omori\/MuscleNote.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "9436B311705490C02F1F70AA7D0F9516B278F8DF"
+    }
+  ]
+}

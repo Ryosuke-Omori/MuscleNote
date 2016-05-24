@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+
 class RegistrationViewController: UIViewController {
     
     @IBOutlet weak var registButton: UIButton!
@@ -19,6 +20,7 @@ class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         
         registButton.addTarget(self, action: #selector(RegistrationViewController.onClickRegistButton), forControlEvents: .TouchUpInside)
+        updateButton.addTarget(self, action: #selector(RegistrationViewController.onClickUpdateButton), forControlEvents: .TouchUpInside)
         
     }
     
@@ -40,22 +42,50 @@ class RegistrationViewController: UIViewController {
     }
     
     
-    //orifinal func-----------------------------------------
+    //original func-----------------------------------------
     func onClickRegistButton() {
-        print("onClickRegistButton")
-        // UIAlertControllerを作成する.
-        let myAlert: UIAlertController = UIAlertController(title: "タイトル", message: "メッセージ", preferredStyle: .Alert)
+        SweetAlertForMe().showAlert("REGIST", subTitle: "Please input your status.", style: AlertStyle.None, buttonTitle: "Cancel", buttonColor: UIColor.colorFromRGB(0xD0D0D0), otherButtonTitle: "OK", otherButtonColor: UIColor.colorFromRGB(0xDD6B55), useMustle: true) { (isOtherButton) -> Void in
+            if isOtherButton == true {
+                print("Cancel Button!")
+            }
+            else {
+                print("OK Button!")
+            }
+            
+        }
+    }
+    
+    func onClickUpdateButton() {
+        makeAlert("UPDATE", message: "Please input your status", preferredStyle: UIAlertControllerStyle.Alert)
+    }
+    
+    func makeAlert(title:String, message:String, preferredStyle:UIAlertControllerStyle) {
+        var weightsTextField: UITextField?
+        var lepsTextField: UITextField?
         
-        // OKのアクションを作成する.
-        let myOkAction = UIAlertAction(title: "OK", style: .Default) { action in
-            print("Action OK!!")
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: preferredStyle)
+        
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler: { (action:UIAlertAction) -> Void in
+            print("Pushed CANCEL")
+        })
+        let registAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: { (action:UIAlertAction) -> Void in
+            print("Pushed OK")
+            print(weightsTextField?.text)
+            print(lepsTextField?.text)
+        })
+        
+        alertController.addAction(cancelAction)
+        alertController.addAction(registAction)
+        
+        alertController.addTextFieldWithConfigurationHandler { (textField:UITextField) -> Void in
+            weightsTextField = textField
+        }
+        alertController.addTextFieldWithConfigurationHandler{ (textField:UITextField) -> Void in
+            lepsTextField = textField
         }
         
-        // OKのActionを追加する.
-        myAlert.addAction(myOkAction)
+        presentViewController(alertController, animated: true, completion: nil)
         
-        // UIAlertを発動する.
-        presentViewController(myAlert, animated: true, completion: nil)
     }
     
 }
