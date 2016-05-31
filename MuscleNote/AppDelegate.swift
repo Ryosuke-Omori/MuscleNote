@@ -8,14 +8,47 @@
 
 import UIKit
 
+
+struct UserData {
+    var userName: String
+    var userWeight: Float
+    var userLeps: Int
+    
+    //static関数(タイプメソッド):インスタンスを生成せずに利用できるメソッド
+    static func SetUserData(dic: NSDictionary?) -> UserData {
+        let name = dic?["userName"] as? String ?? "None"
+        let weight = dic?["userWeight"] as? Float ?? 0.0
+        let leps = dic?["userLeps"] as? Int ?? 0
+        
+        return UserData(userName: name, userWeight: weight, userLeps: leps)
+    }
+    
+    func GetUserData() -> NSDictionary {
+        let dic: NSDictionary = [
+        "userName": self.userName,
+        "userWeight": self.userWeight,
+        "userLeps": self.userLeps
+        ]
+        
+        return dic
+    }
+}
+
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var myUserDefault: NSUserDefaults = NSUserDefaults.standardUserDefaults()
+    var userData: [UserData]?
+    var userSelected: String?
+    
 
-
+    //アプリが初めて起動した時
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
         return true
     }
 
@@ -24,21 +57,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
     }
 
+    //アプリを閉じた時に呼ばれる
     func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        if userSelected != nil {
+            myUserDefault.setObject(userSelected! as String, forKey: "userSelected")
+        }
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
+    //アプリを開いた時に呼ばれる
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        userSelected = myUserDefault.objectForKey("userSelected") as? String
+        print("アプリを開いた時に確定されたuserSelected: \(userSelected)")
     }
 
+    //フリックしてアプリが終了した時
     func applicationWillTerminate(application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        if userSelected != nil {
+            myUserDefault.setObject(userSelected! as String, forKey: "userSelected")
+        }
     }
 
 

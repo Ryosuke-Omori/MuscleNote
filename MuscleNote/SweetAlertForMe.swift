@@ -12,6 +12,7 @@ import Foundation
 import UIKit
 
 enum TextFieldType {
+    case name
     case weight
     case leps
 }
@@ -44,6 +45,7 @@ extension String {
 class SweetAlertForMe: SweetAlert {
     
     //textFieldを追加(original)
+    var nameTextField: UITextField = UITextField()
     var weightTextField: UITextField = UITextField()
     var lepsTextField: UITextField = UITextField()
     let weightLabel: UILabel = UILabel()
@@ -63,6 +65,15 @@ class SweetAlertForMe: SweetAlert {
     
     //textFieldを設定(original)
     private func setupTextField() {
+        //nameTextField
+        nameTextField.delegate = self
+        nameTextField.returnKeyType = UIReturnKeyType.Done
+        nameTextField.keyboardType = UIKeyboardType.ASCIICapable
+        nameTextField.borderStyle = UITextBorderStyle.RoundedRect
+        nameTextField.layer.borderColor = UIColor.blackColor().CGColor
+        nameTextField.placeholder = "Name"
+        nameTextField.tag = TextFieldType.name.hashValue
+        
         //weightTextField
         weightTextField.delegate = self
         weightTextField.returnKeyType = UIReturnKeyType.Done                    //returnKeyに表示される文字を設定
@@ -143,8 +154,14 @@ class SweetAlertForMe: SweetAlert {
             y += textViewHeight + kHeightMargin
         }
         
-        // TextField (original)
+        // Status TextField (original)
         if self.textFieldFlag == true {
+            // name
+            nameTextField.frame = CGRect(x: x*2, y: y, width: width-x*4, height: textFieldHeight)
+            contentView.addSubview(nameTextField)
+            y += textFieldHeight + kHeightMargin
+            
+            // status
             weightTextField.frame = CGRect(x: x, y: y, width: width/4, height: textFieldHeight)
             weightLabel.frame = CGRect(x: weightTextField.frame.maxX, y: y, width: width/4, height: textFieldHeight)
             lepsTextField.frame = CGRect(x: weightLabel.frame.maxX, y: y, width: width/4, height: textFieldHeight)
@@ -250,6 +267,15 @@ class SweetAlertForMe: SweetAlert {
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         //文字数制限をする
         switch textField.tag {
+        case TextFieldType.name.hashValue:
+            let maxInputLength: Int = 21
+            let str = textField.text! + string
+            
+            if str.characters.count < maxInputLength {
+                return true
+            }
+            print("20文字を超えています")
+            break
         case TextFieldType.weight.hashValue:
             let maxInputLength: Int = 6
             let str = textField.text! + string              //入力済みの文字と入力された文字を合わせて取得

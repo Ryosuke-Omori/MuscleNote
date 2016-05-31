@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -40,17 +39,6 @@
                                     <segue destination="3Du-FA-Epq" kind="show" id="sBn-yC-Tkh"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B7Z-yx-xuM" userLabel="NameButton">
-                                <rect key="frame" x="245" y="90" width="100" height="30"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="2uT-uR-Zqq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hBa-OH-0xs" userLabel="MuscleHypertrophyButton">
                                 <rect key="frame" x="75" y="538" width="300" height="49"/>
                                 <constraints>
@@ -65,37 +53,44 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="muscleNoteMenuStrengthening"/>
                             </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vfI-x1-0wt">
+                                <rect key="frame" x="195" y="80" width="150" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1x3-RC-npW"/>
+                                    <constraint firstAttribute="width" constant="150" id="Vxc-Nf-8oC"/>
+                                </constraints>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="hBa-OH-0xs" firstAttribute="trailing" secondItem="EH0-CK-0XY" secondAttribute="trailing" id="86C-QX-z5l"/>
                             <constraint firstItem="cAd-DH-QfS" firstAttribute="width" secondItem="BAh-7o-Hag" secondAttribute="width" id="AHh-hH-nmW"/>
-                            <constraint firstItem="B7Z-yx-xuM" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" constant="-30" id="AhQ-iW-PA3"/>
                             <constraint firstItem="cAd-DH-QfS" firstAttribute="top" secondItem="BAh-7o-Hag" secondAttribute="top" id="Ds4-CQ-XJJ"/>
                             <constraint firstItem="5l7-Eg-z6K" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="H1s-LH-guC"/>
                             <constraint firstItem="5l7-Eg-z6K" firstAttribute="top" secondItem="BAh-7o-Hag" secondAttribute="top" constant="30" id="KJo-c6-Eb1"/>
                             <constraint firstItem="5l7-Eg-z6K" firstAttribute="height" secondItem="BAh-7o-Hag" secondAttribute="height" multiplier="0.15" id="QDd-Va-3jS"/>
                             <constraint firstItem="BAh-7o-Hag" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="SSh-Xx-RtB"/>
-                            <constraint firstItem="B7Z-yx-xuM" firstAttribute="top" secondItem="5l7-Eg-z6K" secondAttribute="centerY" constant="10" id="TD8-m4-RM0"/>
                             <constraint firstItem="5l7-Eg-z6K" firstAttribute="width" secondItem="BAh-7o-Hag" secondAttribute="height" multiplier="0.15" id="aeX-ok-lni"/>
                             <constraint firstItem="EH0-CK-0XY" firstAttribute="width" secondItem="BAh-7o-Hag" secondAttribute="width" multiplier="0.8" id="bxy-E6-3Yc"/>
                             <constraint firstItem="cAd-DH-QfS" firstAttribute="centerX" secondItem="BAh-7o-Hag" secondAttribute="centerX" id="eJV-aA-yOB"/>
                             <constraint firstItem="cAd-DH-QfS" firstAttribute="height" secondItem="BAh-7o-Hag" secondAttribute="height" id="ePw-C1-1pQ"/>
                             <constraint firstItem="EH0-CK-0XY" firstAttribute="bottom" secondItem="BAh-7o-Hag" secondAttribute="bottom" constant="-20" id="gX3-GL-mU6"/>
                             <constraint firstItem="cAd-DH-QfS" firstAttribute="width" secondItem="BAh-7o-Hag" secondAttribute="height" multiplier="375:667" id="j3T-Nm-vMx"/>
+                            <constraint firstItem="vfI-x1-0wt" firstAttribute="bottom" secondItem="5l7-Eg-z6K" secondAttribute="bottom" id="kzZ-uV-q9C"/>
                             <constraint firstItem="BAh-7o-Hag" firstAttribute="bottom" secondItem="8be-0w-9Q2" secondAttribute="top" id="l40-bJ-CF4"/>
                             <constraint firstItem="EH0-CK-0XY" firstAttribute="trailing" secondItem="BAh-7o-Hag" secondAttribute="trailing" id="nkj-h9-1kQ"/>
                             <constraint firstItem="BAh-7o-Hag" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="r5D-1u-Dfs"/>
                             <constraint firstItem="hBa-OH-0xs" firstAttribute="width" secondItem="EH0-CK-0XY" secondAttribute="width" id="s3B-mK-H0U"/>
                             <constraint firstItem="hBa-OH-0xs" firstAttribute="bottom" secondItem="EH0-CK-0XY" secondAttribute="bottom" constant="-60" id="v0X-03-iGF"/>
                             <constraint firstItem="BAh-7o-Hag" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="vZx-kL-4CQ"/>
+                            <constraint firstItem="vfI-x1-0wt" firstAttribute="trailing" secondItem="cAd-DH-QfS" secondAttribute="trailing" constant="-30" id="yiS-tq-ram"/>
                             <constraint firstItem="BAh-7o-Hag" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="zM7-Tb-0tb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V9s-ck-lGF"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="NameButton" destination="B7Z-yx-xuM" id="8jj-mS-laT"/>
+                        <outlet property="namePickerView" destination="vfI-x1-0wt" id="MA1-ae-sqB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
