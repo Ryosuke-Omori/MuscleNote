@@ -17,7 +17,6 @@ class RMCalculateViewController: UIViewController, UIPickerViewDelegate, UIPicke
     }
     
     override func viewWillAppear(animated: Bool) {
-        namePickerView.selectRow(searchUserNumber(), inComponent: 0, animated: true)
         namePickerView.reloadAllComponents()
     }
 

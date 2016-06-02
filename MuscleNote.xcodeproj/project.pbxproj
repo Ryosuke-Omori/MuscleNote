@@ -18,6 +18,8 @@
 		7BAF49751CE1D1EB00FB1439 /* SweetAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49741CE1D1EB00FB1439 /* SweetAlert.swift */; };
 		7BAF49ED1CE2DED000FB1439 /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAF49EC1CE2DED000FB1439 /* CustomAlert.swift */; };
 		7BD7E6F51CEC56DC00127B68 /* SweetAlertForMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD7E6F41CEC56DC00127B68 /* SweetAlertForMe.swift */; };
+		7BD7E6F71D00280C00127B68 /* MuscleHypertrophyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD7E6F61D00280B00127B68 /* MuscleHypertrophyController.swift */; };
+		7BD7E6FB1D002ACD00127B68 /* AoyagiKouzanTOTF.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7BD7E6FA1D002ACD00127B68 /* AoyagiKouzanTOTF.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,8 @@
 		7BAF49741CE1D1EB00FB1439 /* SweetAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SweetAlert.swift; path = "../../../../Module/SweetAlert-iOS/SweetAlert/SweetAlert.swift"; sourceTree = "<group>"; };
 		7BAF49EC1CE2DED000FB1439 /* CustomAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomAlert.swift; path = ../../../../Module/CustomAlertView/CustomAlertView/CustomAlert.swift; sourceTree = "<group>"; };
 		7BD7E6F41CEC56DC00127B68 /* SweetAlertForMe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SweetAlertForMe.swift; sourceTree = "<group>"; };
+		7BD7E6F61D00280B00127B68 /* MuscleHypertrophyController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MuscleHypertrophyController.swift; sourceTree = "<group>"; };
+		7BD7E6FA1D002ACD00127B68 /* AoyagiKouzanTOTF.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AoyagiKouzanTOTF.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +110,10 @@
 			isa = PBXGroup;
 			children = (
 				7BAF49041CB6366E00FB1439 /* AppDelegate.swift */,
+				7BD7E6FA1D002ACD00127B68 /* AoyagiKouzanTOTF.otf */,
 				7BAF49061CB6366E00FB1439 /* RMCalculateViewController.swift */,
 				7BAF496E1CC4C3AF00FB1439 /* RegistrationViewController.swift */,
+				7BD7E6F61D00280B00127B68 /* MuscleHypertrophyController.swift */,
 				7BAF49EC1CE2DED000FB1439 /* CustomAlert.swift */,
 				7BAF49741CE1D1EB00FB1439 /* SweetAlert.swift */,
 				7BD7E6F41CEC56DC00127B68 /* SweetAlertForMe.swift */,
@@ -241,6 +247,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BD7E6FB1D002ACD00127B68 /* AoyagiKouzanTOTF.otf in Resources */,
 				7BAF490F1CB6366E00FB1439 /* LaunchScreen.storyboard in Resources */,
 				7BAF490C1CB6366E00FB1439 /* Assets.xcassets in Resources */,
 				7BAF490A1CB6366E00FB1439 /* Main.storyboard in Resources */,
@@ -272,6 +279,7 @@
 				7BAF49071CB6366E00FB1439 /* RMCalculateViewController.swift in Sources */,
 				7BAF49051CB6366E00FB1439 /* AppDelegate.swift in Sources */,
 				7BD7E6F51CEC56DC00127B68 /* SweetAlertForMe.swift in Sources */,
+				7BD7E6F71D00280C00127B68 /* MuscleHypertrophyController.swift in Sources */,
 				7BAF49751CE1D1EB00FB1439 /* SweetAlert.swift in Sources */,
 				7BAF49ED1CE2DED000FB1439 /* CustomAlert.swift in Sources */,
 			);

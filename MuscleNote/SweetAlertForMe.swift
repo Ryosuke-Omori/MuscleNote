@@ -51,9 +51,12 @@ class SweetAlertForMe: SweetAlert {
     let weightLabel: UILabel = UILabel()
     let lepsLabel: UILabel = UILabel()
     
-    var textFieldFlag: Bool = false
+    var registTextFieldFlag: Bool = false
+    var updateTextFieldFlag: Bool = false
     let textFieldHeight: CGFloat = 30.0
     let textFieldBorderColor: CGColor = UIColor.blackColor().CGColor
+    
+    let app: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     override init() {
         super.init()
@@ -71,8 +74,12 @@ class SweetAlertForMe: SweetAlert {
         nameTextField.keyboardType = UIKeyboardType.ASCIICapable
         nameTextField.borderStyle = UITextBorderStyle.RoundedRect
         nameTextField.layer.borderColor = UIColor.blackColor().CGColor
-        nameTextField.placeholder = "Name"
         nameTextField.tag = TextFieldType.name.hashValue
+        nameTextField.placeholder = "Name"
+        if updateTextFieldFlag {
+            nameTextField.text = app.userSelected
+            print("nameTextFieldに入りました!!!: \(app.userSelected)")
+        }
         
         //weightTextField
         weightTextField.delegate = self
@@ -106,13 +113,23 @@ class SweetAlertForMe: SweetAlert {
         
     }
     
-    // MustleNoteのtextFieldを追加するためのshowAlert
-    func showAlert(title: String, subTitle: String?, style: AlertStyle, buttonTitle: String, buttonColor: UIColor, otherButtonTitle: String?, otherButtonColor: UIColor?, useMustle: Bool, action: ((isOtherButton: Bool) -> Void)? = nil) -> SweetAlertForMe {
+    // MustleNoteのtextFieldを追加するためのshowAlert(登録用)
+    func showAlert(title: String, subTitle: String?, style: AlertStyle, buttonTitle: String, buttonColor: UIColor, otherButtonTitle: String?, otherButtonColor: UIColor?, useRegistMustle: Bool, action: ((isOtherButton: Bool) -> Void)? = nil) -> SweetAlertForMe {
+        registTextFieldFlag = useRegistMustle
         self.setupTextField()
         self.showAlert(title, subTitle: subTitle, style: style, buttonTitle: buttonTitle,buttonColor: buttonColor,otherButtonTitle:
             otherButtonTitle,otherButtonColor: UIColor.redColor())
         userAction = action
-        textFieldFlag = useMustle
+        return self
+    }
+    
+    // MustleNoteのtextFieldを追加するためのshowAlert(更新用)
+    func showAlert(title: String, subTitle: String?, style: AlertStyle, buttonTitle: String, buttonColor: UIColor, otherButtonTitle: String?, otherButtonColor: UIColor?, useUpdateMustle: Bool, action: ((isOtherButton: Bool) -> Void)? = nil) -> SweetAlertForMe {
+        updateTextFieldFlag = useUpdateMustle
+        self.setupTextField()
+        self.showAlert(title, subTitle: subTitle, style: style, buttonTitle: buttonTitle,buttonColor: buttonColor,otherButtonTitle:
+            otherButtonTitle,otherButtonColor: UIColor.redColor())
+        userAction = action
         return self
     }
     
@@ -155,7 +172,7 @@ class SweetAlertForMe: SweetAlert {
         }
         
         // Status TextField (original)
-        if self.textFieldFlag == true {
+        if self.registTextFieldFlag || self.updateTextFieldFlag {
             // name
             nameTextField.frame = CGRect(x: x*2, y: y, width: width-x*4, height: textFieldHeight)
             contentView.addSubview(nameTextField)
@@ -277,13 +294,13 @@ class SweetAlertForMe: SweetAlert {
             print("20文字を超えています")
             break
         case TextFieldType.weight.hashValue:
-            let maxInputLength: Int = 6
+            let maxInputLength: Int = 7
             let str = textField.text! + string              //入力済みの文字と入力された文字を合わせて取得
             
             if str.characters.count < maxInputLength {
                 return true
             }
-            print("5文字を超えています")
+            print("6文字を超えています")
             break
         case TextFieldType.leps.hashValue:
             let maxInputLength: Int = 3;

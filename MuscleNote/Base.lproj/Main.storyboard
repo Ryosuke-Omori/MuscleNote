@@ -7,6 +7,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AoyagiKouzanTOTF.otf">
+            <string>AoyagiKouzanFontTOTF</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Calculate View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -24,7 +29,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muscleNoteTop" translatesAutoresizingMaskIntoConstraints="NO" id="cAd-DH-QfS" userLabel="TopImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muscleNoteTop" translatesAutoresizingMaskIntoConstraints="NO" id="cAd-DH-QfS" userLabel="TopImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5l7-Eg-z6K" userLabel="RMCalculator">
@@ -45,6 +50,9 @@
                                     <constraint firstAttribute="width" secondItem="hBa-OH-0xs" secondAttribute="height" multiplier="300:49" id="4tU-fp-Hs6"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="muscleNoteMenuHypertrophy"/>
+                                <connections>
+                                    <segue destination="sus-rX-ffd" kind="show" id="9dA-IJ-hah"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EH0-CK-0XY" userLabel="MuscleStrengtheningButton">
                                 <rect key="frame" x="75" y="598" width="300" height="49"/>
@@ -114,7 +122,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muscleNoteRegistView" translatesAutoresizingMaskIntoConstraints="NO" id="Chk-kn-yT8">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CVO-D9-Vcv" userLabel="ButtonSpacer1">
                                 <rect key="frame" x="187" y="64" width="0.0" height="181"/>
@@ -152,11 +160,9 @@
                         <constraints>
                             <constraint firstItem="1I8-WB-qDE" firstAttribute="top" secondItem="CVO-D9-Vcv" secondAttribute="bottom" id="40T-6P-y22"/>
                             <constraint firstItem="CVO-D9-Vcv" firstAttribute="height" secondItem="JlV-m3-l2V" secondAttribute="height" multiplier="0.3" id="9p1-wf-A1z"/>
-                            <constraint firstItem="Chk-kn-yT8" firstAttribute="height" secondItem="JlV-m3-l2V" secondAttribute="height" id="AJ4-oW-EPa"/>
                             <constraint firstItem="JlV-m3-l2V" firstAttribute="leading" secondItem="hNn-6W-LKE" secondAttribute="leading" id="ArL-3c-yJ3"/>
                             <constraint firstItem="NLp-5g-z10" firstAttribute="top" secondItem="1I8-WB-qDE" secondAttribute="bottom" id="BWr-dX-aeP"/>
                             <constraint firstItem="goJ-vD-mSD" firstAttribute="centerX" secondItem="CVO-D9-Vcv" secondAttribute="centerX" id="CQ7-lS-Vs8"/>
-                            <constraint firstItem="Chk-kn-yT8" firstAttribute="top" secondItem="JlV-m3-l2V" secondAttribute="top" id="FMQ-VP-18N"/>
                             <constraint firstItem="egA-q1-DM4" firstAttribute="centerX" secondItem="CVO-D9-Vcv" secondAttribute="centerX" id="FsA-a3-ATd"/>
                             <constraint firstItem="CVO-D9-Vcv" firstAttribute="centerX" secondItem="JlV-m3-l2V" secondAttribute="centerX" id="Gv2-eo-W7h"/>
                             <constraint firstItem="Chk-kn-yT8" firstAttribute="leading" secondItem="JlV-m3-l2V" secondAttribute="leading" id="HYm-SS-z0k"/>
@@ -165,6 +171,7 @@
                             <constraint firstItem="goJ-vD-mSD" firstAttribute="width" secondItem="JlV-m3-l2V" secondAttribute="width" multiplier="0.9" id="KLi-tK-wRb"/>
                             <constraint firstItem="JlV-m3-l2V" firstAttribute="bottom" secondItem="BJp-aK-pbU" secondAttribute="top" id="RSX-ER-AwY"/>
                             <constraint firstItem="JlV-m3-l2V" firstAttribute="trailing" secondItem="hNn-6W-LKE" secondAttribute="trailing" id="Rmg-0F-9Ie"/>
+                            <constraint firstItem="Chk-kn-yT8" firstAttribute="height" secondItem="hNn-6W-LKE" secondAttribute="height" id="USW-Fx-yCd"/>
                             <constraint firstItem="NLp-5g-z10" firstAttribute="height" secondItem="CVO-D9-Vcv" secondAttribute="height" id="aL8-Am-shz"/>
                             <constraint firstItem="JlV-m3-l2V" firstAttribute="top" secondItem="e5b-nC-uUJ" secondAttribute="bottom" id="dD3-Rk-67Z"/>
                             <constraint firstItem="1I8-WB-qDE" firstAttribute="centerX" secondItem="CVO-D9-Vcv" secondAttribute="centerX" id="dDa-h4-1TT"/>
@@ -173,6 +180,7 @@
                             <constraint firstItem="egA-q1-DM4" firstAttribute="top" secondItem="NLp-5g-z10" secondAttribute="bottom" id="rZp-XN-svk"/>
                             <constraint firstItem="CVO-D9-Vcv" firstAttribute="top" secondItem="JlV-m3-l2V" secondAttribute="top" id="tPa-r0-lea"/>
                             <constraint firstItem="NLp-5g-z10" firstAttribute="centerX" secondItem="CVO-D9-Vcv" secondAttribute="centerX" id="ugO-3Z-yJ6"/>
+                            <constraint firstItem="Chk-kn-yT8" firstAttribute="bottom" secondItem="JlV-m3-l2V" secondAttribute="bottom" id="xd9-Fe-xc5"/>
                             <constraint firstItem="Chk-kn-yT8" firstAttribute="width" secondItem="JlV-m3-l2V" secondAttribute="height" multiplier="125:201" id="xvE-Av-tFE"/>
                             <constraint firstItem="NLp-5g-z10" firstAttribute="width" secondItem="CVO-D9-Vcv" secondAttribute="width" id="y0Z-ix-MGF"/>
                         </constraints>
@@ -186,6 +194,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlC-Ga-gne" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1614.5" y="259.5"/>
+        </scene>
+        <!--Muscle Hypertrophy Controller-->
+        <scene sceneID="heP-Ty-37h">
+            <objects>
+                <viewController id="sus-rX-ffd" customClass="MuscleHypertrophyController" customModule="MuscleNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cpT-Ir-F3A"/>
+                        <viewControllerLayoutGuide type="bottom" id="vj9-b1-1Vg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VFv-sC-oEv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pIj-Lq-Vat" userLabel="DummyView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="muscleNoteTrainig" translatesAutoresizingMaskIntoConstraints="NO" id="4t3-n6-bHt" userLabel="muscleNoteTrainingView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="筋 肥 大" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zov-i7-BgX" userLabel="titleLabel">
+                                <rect key="frame" x="0.0" y="84" width="375" height="61"/>
+                                <fontDescription key="fontDescription" name="AoyagiKouzanFontTOTF" family="AoyagiKouzanFontTOTF" pointSize="69"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="3" height="3"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zov-i7-BgX" firstAttribute="centerX" secondItem="pIj-Lq-Vat" secondAttribute="centerX" id="1Kd-Xd-9vW"/>
+                            <constraint firstItem="pIj-Lq-Vat" firstAttribute="top" secondItem="cpT-Ir-F3A" secondAttribute="bottom" id="67V-kQ-L0y"/>
+                            <constraint firstItem="pIj-Lq-Vat" firstAttribute="leading" secondItem="VFv-sC-oEv" secondAttribute="leading" id="92V-JE-RRu"/>
+                            <constraint firstItem="4t3-n6-bHt" firstAttribute="trailing" secondItem="pIj-Lq-Vat" secondAttribute="trailing" id="Fg9-fe-SmN"/>
+                            <constraint firstItem="4t3-n6-bHt" firstAttribute="bottom" secondItem="pIj-Lq-Vat" secondAttribute="bottom" id="Gxi-cD-Mha"/>
+                            <constraint firstItem="Zov-i7-BgX" firstAttribute="top" secondItem="pIj-Lq-Vat" secondAttribute="top" constant="20" id="NEJ-gU-q50"/>
+                            <constraint firstItem="pIj-Lq-Vat" firstAttribute="bottom" secondItem="vj9-b1-1Vg" secondAttribute="top" id="fIv-cR-4bW"/>
+                            <constraint firstItem="4t3-n6-bHt" firstAttribute="leading" secondItem="pIj-Lq-Vat" secondAttribute="leading" id="jNI-XB-g0j"/>
+                            <constraint firstItem="pIj-Lq-Vat" firstAttribute="trailing" secondItem="VFv-sC-oEv" secondAttribute="trailing" id="sNu-YE-gPP"/>
+                            <constraint firstItem="Zov-i7-BgX" firstAttribute="height" secondItem="pIj-Lq-Vat" secondAttribute="height" multiplier="0.1" id="yPI-T7-sVK"/>
+                            <constraint firstItem="4t3-n6-bHt" firstAttribute="height" secondItem="VFv-sC-oEv" secondAttribute="height" id="yPk-Mg-zl7"/>
+                            <constraint firstItem="Zov-i7-BgX" firstAttribute="width" secondItem="pIj-Lq-Vat" secondAttribute="width" id="zJG-FS-7Cn"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="Zov-i7-BgX" id="X30-S7-QtL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uad-ob-SJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1107.5" y="1057.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="p7q-PS-Aj3">
@@ -215,5 +276,6 @@
         <image name="muscleNoteRegistView" width="750" height="1334"/>
         <image name="muscleNoteRegistrationViewMenu" width="434" height="59"/>
         <image name="muscleNoteTop" width="751" height="1334"/>
+        <image name="muscleNoteTrainig" width="750" height="1334"/>
     </resources>
 </document>

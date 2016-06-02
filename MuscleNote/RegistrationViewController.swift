@@ -34,7 +34,8 @@ class RegistrationViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         //登録画面に遷移する際にnavigationControllerBarを表示
-        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.015, green: 0.002, blue: 0, alpha: 1)
+//        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.015, green: 0.002, blue: 0, alpha: 1)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
@@ -48,27 +49,36 @@ class RegistrationViewController: UIViewController {
     //original func-----------------------------------------
     func onClickRegistButton() {
         let sweetAlert: SweetAlertForMe = SweetAlertForMe()
-        sweetAlert.showAlert("REGIST", subTitle: "Please input your status.", style: AlertStyle.None, buttonTitle: "Cancel", buttonColor: UIColor.colorFromRGB(0xD0D0D0), otherButtonTitle: "OK", otherButtonColor: UIColor.colorFromRGB(0xDD6B55), useMustle: true) { (isOtherButton) -> Void in
+        sweetAlert.showAlert("REGIST", subTitle: "Please input your status.", style: AlertStyle.None, buttonTitle: "Cancel", buttonColor: UIColor.colorFromRGB(0xD0D0D0), otherButtonTitle: "OK", otherButtonColor: UIColor.colorFromRGB(0xDD6B55), useRegistMustle: true) { (isOtherButton) -> Void in
             if isOtherButton == true {
-                print("Cancel Button!")
+                print("Cancel Button in Registration!")
             }
             else {
-                print("OK Button!")
-                self.checkAndSaveStatus(sweetAlert.nameTextField.text, weight: sweetAlert.weightTextField.text, leps: sweetAlert.lepsTextField.text)
+                print("OK Button in Registration!")
+                self.registCheckAndSaveStatus(sweetAlert.nameTextField.text, weight: sweetAlert.weightTextField.text, leps: sweetAlert.lepsTextField.text)
             }
         }
     }
     
     func onClickUpdateButton() {
         if app.userSelected != nil {
-            
+            let sweetAlert: SweetAlertForMe = SweetAlertForMe()
+            sweetAlert.showAlert("UPDATE", subTitle: "Please input your new status.", style: AlertStyle.None, buttonTitle: "Cancel", buttonColor: UIColor.colorFromRGB(0xD0D0D0), otherButtonTitle: "OK", otherButtonColor: UIColor.colorFromRGB(0xDD6B55), useUpdateMustle: true) { (isOtherButton) -> Void in
+                if isOtherButton == true {
+                    print("Cancel Button in Update!")
+                }
+                else {
+                    print("OK Button in Update!")
+                    self.updateCheckAndSaveStatus(sweetAlert.nameTextField.text, weight: sweetAlert.weightTextField.text, leps: sweetAlert.lepsTextField.text)
+                }
+            }
         } else {
             SweetAlert().showAlert("Not selected!!!", subTitle: "Please select user.", style: AlertStyle.Error)
         }
     }
     
     
-    func checkAndSaveStatus(name: String?, weight: String?, leps: String?) {
+    func registCheckAndSaveStatus(name: String?, weight: String?, leps: String?) {
         if !((name!.isEmpty)) && !((weight!.isEmpty)) && !((leps!.isEmpty)) {
             let userDataObjects = app.myUserDefault.objectForKey("userData")
             if userDataObjects != nil {
@@ -88,8 +98,6 @@ class RegistrationViewController: UIViewController {
                                                      "userLeps": leps!
                         ]
                         let userData: UserData = UserData.SetUserData(userDic)
-                        print(userDataDicArray.count)
-                        print(userDataDicArray[0]["userName"])
                         userDataDicArray.append(userData.GetUserData())
                         app.myUserDefault.setObject(userDataDicArray, forKey: "userData")
                         SweetAlert().showAlert("Success!!!", subTitle: "You registed successfully.", style: AlertStyle.Success)
@@ -111,17 +119,49 @@ class RegistrationViewController: UIViewController {
                     SweetAlert().showAlert("Incorrect!!!", subTitle: "This status is illegality.", style: AlertStyle.Error)
                 }
             }
-            app.userSelected = name
         } else {
             SweetAlert().showAlert("Incorrect!!!", subTitle: "Please Input completely.", style: AlertStyle.Error)
         }
     }
     
+    func updateCheckAndSaveStatus(name: String?, weight: String?, leps: String?) {
+        if !((name!.isEmpty)) && !((weight!.isEmpty)) && !((leps!.isEmpty)) {
+            let userDataObjects = app.myUserDefault.objectForKey("userData")
+            var userDataDicArray: [NSDictionary] = userDataObjects as! [NSDictionary]
+            var userNumber: Int?
+            for i in 0..<userDataDicArray.count {
+                if userDataDicArray[i]["userName"] as? String == app.userSelected {
+                    userNumber = i
+                }
+            }
+            if checkGrammar(weight!, leps: leps!) {
+                let userDataDic: NSDictionary = ["userName": name!,
+                                                 "userWeight": weight!,
+                                                 "userLeps": leps!
+                ]
+                let userData: UserData = UserData.SetUserData(userDataDic)
+                userDataDicArray[userNumber!] = userData.GetUserData()
+                app.myUserDefault.setObject(userDataDicArray, forKey: "userData")
+                SweetAlert().showAlert("Success!!!", subTitle: "You updated successfully.", style: AlertStyle.Success)
+                app.userSelected = name
+            } else {
+                print("name: \(name)")
+                print("weight: \(weight)")
+                print("leps: \(leps)")
+                SweetAlert().showAlert("Incorrect!!!", subTitle: "This status is illegality.", style: AlertStyle.Error)
+            }
+        } else {
+            SweetAlert().showAlert("Incorrect!!!", subTitle: "Please Input completely.", style: AlertStyle.Error)
+        }
+    }
+    
+    
+    
     func checkGrammar(weight: String, leps: String) -> Bool {
         var weightFlag: Bool = false
         var lepsFlag: Bool = false
         
-        let wPattern = "\\d+\\.\\d+"
+        let wPattern = "\\d+\\.?\\d+"
         if Regexp(wPattern).isMatch(weight) {
             weightFlag = true
         }
@@ -134,6 +174,7 @@ class RegistrationViewController: UIViewController {
         if weightFlag && lepsFlag {
             return true
         }
+        
         return false
     }
     
