@@ -8,44 +8,18 @@
 
 import Foundation
 import UIKit
-import SpriteKit
 
-
-extension UILabel {
-    func setupSelf(size: CGSize, position: CGPoint, text: String) {
-        self.frame.size = size
-        self.layer.position = position
-        self.backgroundColor = UIColor(patternImage: UIImage(named: "muscleNoteTrainigMenu")!)
-        self.alpha = 0.85
-        self.font = UIFont(name: "AoyagiKouzanFontTOTF", size: 30)
-        self.adjustsFontSizeToFitWidth = true
-        self.minimumScaleFactor = 0.3
-        self.shadowColor = UIColor.darkGrayColor()
-        self.shadowOffset = CGSizeMake(1.0, 1.0)
-        self.textAlignment = NSTextAlignment.Center
-        self.textColor = UIColor.whiteColor()
-        self.numberOfLines = 2
-        self.text = text
-    }
-}
-
-
-
-
-class MuscleHypertrophyController: UIViewController {
+class MuscleStrengtheningController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var fireLeftParticleView: UIView!
-    @IBOutlet weak var fireRightParticleView: UIView!
-
+    
     let per100Label: UILabel = UILabel()
-    let per87_5Label: UILabel = UILabel()
+    let per90Label: UILabel = UILabel()
+    let per90Label2: UILabel = UILabel()
     let per85Label: UILabel = UILabel()
-    let per82_5Label: UILabel = UILabel()
+    let per85Label2: UILabel = UILabel()
     let per80Label: UILabel = UILabel()
-    let per77_5Label: UILabel = UILabel()
-    let per75Label: UILabel = UILabel()
-    var perLabelArray: [UILabel] = []
+    let per80Label2: UILabel = UILabel()
     
     var labelSize: CGSize!
     let labelFontFamily: String = "AoyagiKouzanFontTOTF"
@@ -54,7 +28,7 @@ class MuscleHypertrophyController: UIViewController {
     
     let muscleSkinImageView: UIImageView = UIImageView()
     let muscleShadowImageView: UIImageView = UIImageView()
-        
+
     let maxX: CGFloat = UIScreen.mainScreen().bounds.size.width
     let maxY: CGFloat = UIScreen.mainScreen().bounds.size.height
     
@@ -63,7 +37,7 @@ class MuscleHypertrophyController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        labelSize = CGSize(width: maxX/2-40, height: maxY/10)
+        labelSize = CGSize(width: maxX/2-40, height: maxY/12)
         
         setupLabel()
         
@@ -71,23 +45,20 @@ class MuscleHypertrophyController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         //登録画面に遷移する際にnavigationControllerBarを表示
-//        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.015, green: 0.002, blue: 0, alpha: 0.2)
+        //        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.015, green: 0.002, blue: 0, alpha: 0.2)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), forBarMetrics: UIBarMetrics.Default)
         self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        //トップに戻る際にnavigationControllerBarを非表示
-        self.navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
     override func viewDidAppear(animated: Bool) {
         setupMuscleImageView()
         setupAnimation()
-        setupParticle(fireLeftParticleView)
-        setupParticle(fireRightParticleView)
-
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        //トップに戻る際にnavigationControllerBarを非表示
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     
@@ -129,36 +100,7 @@ class MuscleHypertrophyController: UIViewController {
         self.muscleShadowImageView.layer.addAnimation(moveToShadow, forKey: nil)
     }
     
-    //炎アニメーション(パーティクル)の設定
-    func setupParticle(view: UIView) {
-        let skView = SKView(frame: view.frame)
-        //なんか知らんけどずれるから調整、大きさも
-        skView.frame.size.height += view.frame.size.height/12
-        skView.layer.position.y += view.frame.size.height/2 + view.frame.size.height/12
-        skView.userInteractionEnabled = false               //UIKit上で使う場合必須。UIKit側でイベントが取れない。
-//        skView.autoresizingMask = [.FlexibleWidth]
-        skView.backgroundColor = UIColor.clearColor()
-        self.view.addSubview(skView)
-        
-        let scene = SKScene(size: skView.frame.size)
-        scene.backgroundColor = UIColor.clearColor()
-        skView.presentScene(scene)
-        
-        if let node = SKEmitterNode(fileNamed: "Fire") {
-//            node.frame.size = CGSize(width: scene.frame.width, height: scene.frame.height)
-            node.position = CGPoint(x: scene.frame.width/2, y: scene.frame.size.height/12)
-            node.alpha = 0.5
-            scene.addChild(node)
-            
-            //labelを最前線に
-            for perLabel in perLabelArray {
-                self.view.bringSubviewToFront(perLabel)
-            }
-        }
-        
-        
-    }
-    
+    //メニューを表示するラベルを設定
     func setupLabel() {
         let userData: NSDictionary = getUserStatus()
         var count = 0
@@ -183,22 +125,21 @@ class MuscleHypertrophyController: UIViewController {
                 result = result * 0.01
                 let resultStr = String(result)
                 
-//                let resultValue: Double = Double(result)
-//                print(resultValue)
-//                let resultNumber: NSNumber = NSNumber.init(double: resultValue)
-//                print(resultNumber)
-//                let resultStr: String = String(resultNumber)
-//                print(resultStr)
-                
                 //計算型プロパティ
                 var switchLeps: Int {
                     switch count {
-                    case 1,4:
-                        return 10
-                    case 2,5:
+                    case 1:
                         return 8
-                    case 3,6:
+                    case 2:
                         return 6
+                    case 3:
+                        return 4
+                    case 4:
+                        return 7
+                    case 5:
+                        return 5
+                    case 6:
+                        return 3
                     default:
                         return 0
                     }
@@ -218,33 +159,25 @@ class MuscleHypertrophyController: UIViewController {
         self.view.addSubview(per100Label)
         
         //左列
-        per77_5Label.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x - labelSize.width/2 - 20),y: (per100Label.layer.position.y + maxY/5)), text: getLabelText(userData, 77.5))
-        self.view.addSubview(per77_5Label)
+        per80Label.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x - labelSize.width/2 - 20),y: (per100Label.layer.position.y + maxY/5)), text: getLabelText(userData, 80))
+        self.view.addSubview(per80Label)
         
-        per82_5Label.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x - labelSize.width/2 - 20),y: (per77_5Label.layer.position.y + maxY/7)), text: getLabelText(userData, 82.5))
-        self.view.addSubview(per82_5Label)
+        per85Label.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x - labelSize.width/2 - 20),y: (per80Label.layer.position.y + maxY/7)), text: getLabelText(userData, 85))
+        self.view.addSubview(per85Label)
         
-        per87_5Label.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x - labelSize.width/2 - 20),y: (per82_5Label.layer.position.y + maxY/7)), text: getLabelText(userData, 87.5))
-        self.view.addSubview(per87_5Label)
+        per90Label.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x - labelSize.width/2 - 20),y: (per85Label.layer.position.y + maxY/7)), text: getLabelText(userData, 90))
+        self.view.addSubview(per90Label)
         
         //右列
-        per75Label.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x + labelSize.width/2 + 20),y: (per100Label.layer.position.y + maxY/5)), text: getLabelText(userData, 75))
-        self.view.addSubview(per75Label)
+        per80Label2.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x + labelSize.width/2 + 20),y: (per100Label.layer.position.y + maxY/5)), text: getLabelText(userData, 80))
+        self.view.addSubview(per80Label2)
         
-        per80Label.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x + labelSize.width/2 + 20),y: (per75Label.layer.position.y + maxY/7)), text: getLabelText(userData, 80))
-        self.view.addSubview(per80Label)
-
-        per85Label.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x + labelSize.width/2 + 20),y: (per80Label.layer.position.y + maxY/7)), text: getLabelText(userData, 85))
-        self.view.addSubview(per85Label)
-
-        perLabelArray.append(per100Label)
-        perLabelArray.append(per77_5Label)
-        perLabelArray.append(per82_5Label)
-        perLabelArray.append(per87_5Label)
-        perLabelArray.append(per75Label)
-        perLabelArray.append(per80Label)
-        perLabelArray.append(per85Label)
-
+        per85Label2.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x + labelSize.width/2 + 20),y: (per80Label2.layer.position.y + maxY/7)), text: getLabelText(userData, 85))
+        self.view.addSubview(per85Label2)
+        
+        per90Label2.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x + labelSize.width/2 + 20),y: (per85Label2.layer.position.y + maxY/7)), text: getLabelText(userData, 90))
+        self.view.addSubview(per90Label2)
+        
     }
     
     func getUserStatus() -> NSDictionary {

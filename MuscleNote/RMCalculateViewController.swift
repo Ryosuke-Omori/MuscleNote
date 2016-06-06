@@ -14,6 +14,8 @@ class RMCalculateViewController: UIViewController, UIPickerViewDelegate, UIPicke
         
         setupNamePickerView()
         
+        print(app.myUserDefault.objectForKey("userData"))
+        
     }
     
     override func viewWillAppear(animated: Bool) {

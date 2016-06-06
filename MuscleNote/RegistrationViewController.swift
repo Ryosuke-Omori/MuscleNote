@@ -94,8 +94,8 @@ class RegistrationViewController: UIViewController {
                 if !(userExistsFlag) {
                     if checkGrammar(weight!, leps: leps!) {
                         let userDic: NSDictionary = ["userName": name!,
-                                                     "userWeight": weight!,
-                                                     "userLeps": leps!
+                                                     "userWeight": Float(weight!)!,
+                                                     "userLeps": Int(leps!)!
                         ]
                         let userData: UserData = UserData.SetUserData(userDic)
                         userDataDicArray.append(userData.GetUserData())
@@ -108,8 +108,8 @@ class RegistrationViewController: UIViewController {
             } else {
                 if checkGrammar(weight!, leps: leps!) {
                     let userDic: NSDictionary = ["userName": name!,
-                                                 "userWeight": weight!,
-                                                 "userLeps": leps!
+                                                 "userWeight": Float(weight!)!,
+                                                 "userLeps": Int(leps!)!
                     ]
                     let userData: UserData = UserData.SetUserData(userDic)
                     let userDataDicArray: [NSDictionary] = [userData.GetUserData()]
@@ -136,8 +136,8 @@ class RegistrationViewController: UIViewController {
             }
             if checkGrammar(weight!, leps: leps!) {
                 let userDataDic: NSDictionary = ["userName": name!,
-                                                 "userWeight": weight!,
-                                                 "userLeps": leps!
+                                                 "userWeight": Float(weight!)!,
+                                                 "userLeps": Int(leps!)!
                 ]
                 let userData: UserData = UserData.SetUserData(userDataDic)
                 userDataDicArray[userNumber!] = userData.GetUserData()
