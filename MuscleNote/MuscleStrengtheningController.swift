@@ -8,10 +8,13 @@
 
 import Foundation
 import UIKit
+import SpriteKit
 
 class MuscleStrengtheningController: UIViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var fireLeftParticleView: UIView!
+    @IBOutlet weak var fireRightParticleView: UIView!
     
     let per100Label: UILabel = UILabel()
     let per90Label: UILabel = UILabel()
@@ -20,6 +23,7 @@ class MuscleStrengtheningController: UIViewController {
     let per85Label2: UILabel = UILabel()
     let per80Label: UILabel = UILabel()
     let per80Label2: UILabel = UILabel()
+    var perLabelArray: [UILabel] = []
     
     var labelSize: CGSize!
     let labelFontFamily: String = "AoyagiKouzanFontTOTF"
@@ -54,6 +58,8 @@ class MuscleStrengtheningController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         setupMuscleImageView()
         setupAnimation()
+        setupParticle(fireLeftParticleView)
+        setupParticle(fireRightParticleView)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -98,6 +104,36 @@ class MuscleStrengtheningController: UIViewController {
         
         self.muscleSkinImageView.layer.addAnimation(moveToSkin, forKey: nil)
         self.muscleShadowImageView.layer.addAnimation(moveToShadow, forKey: nil)
+    }
+    
+    //炎アニメーション(パーティクル)の設定
+    func setupParticle(view: UIView) {
+        let skView = SKView(frame: view.frame)
+        //なんか知らんけどずれるから調整、大きさも
+        skView.frame.size.height += view.frame.size.height/12
+//        skView.layer.position.y += view.frame.size.height/2 + view.frame.size.height/12
+        skView.userInteractionEnabled = false               //UIKit上で使う場合必須。UIKit側でイベントが取れない。
+        //        skView.autoresizingMask = [.FlexibleWidth]
+        skView.backgroundColor = UIColor.clearColor()
+        self.view.addSubview(skView)
+        
+        let scene = SKScene(size: skView.frame.size)
+        scene.backgroundColor = UIColor.clearColor()
+        skView.presentScene(scene)
+        
+        if let node = SKEmitterNode(fileNamed: "Fire") {
+            //            node.frame.size = CGSize(width: scene.frame.width, height: scene.frame.height)
+            node.position = CGPoint(x: scene.frame.width/2, y: scene.frame.size.height/12)
+            node.alpha = 0.5
+            scene.addChild(node)
+            
+            //labelを最前線に
+            for perLabel in perLabelArray {
+                self.view.bringSubviewToFront(perLabel)
+            }
+        }
+        
+        
     }
     
     //メニューを表示するラベルを設定
@@ -177,6 +213,14 @@ class MuscleStrengtheningController: UIViewController {
         
         per90Label2.setupSelf(labelSize, position: CGPoint(x: (per100Label.layer.position.x + labelSize.width/2 + 20),y: (per85Label2.layer.position.y + maxY/7)), text: getLabelText(userData, 90))
         self.view.addSubview(per90Label2)
+        
+        perLabelArray.append(per100Label)
+        perLabelArray.append(per80Label)
+        perLabelArray.append(per85Label)
+        perLabelArray.append(per90Label)
+        perLabelArray.append(per80Label2)
+        perLabelArray.append(per85Label2)
+        perLabelArray.append(per90Label2)
         
     }
     

@@ -134,7 +134,7 @@ class MuscleHypertrophyController: UIViewController {
         let skView = SKView(frame: view.frame)
         //なんか知らんけどずれるから調整、大きさも
         skView.frame.size.height += view.frame.size.height/12
-        skView.layer.position.y += view.frame.size.height/2 + view.frame.size.height/12
+//        skView.layer.position.y += view.frame.size.height/2 + view.frame.size.height/12
         skView.userInteractionEnabled = false               //UIKit上で使う場合必須。UIKit側でイベントが取れない。
 //        skView.autoresizingMask = [.FlexibleWidth]
         skView.backgroundColor = UIColor.clearColor()
