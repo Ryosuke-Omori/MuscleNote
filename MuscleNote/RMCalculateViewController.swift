@@ -20,6 +20,8 @@ class RMCalculateViewController: UIViewController, UIPickerViewDelegate, UIPicke
     
     override func viewWillAppear(animated: Bool) {
         namePickerView.reloadAllComponents()
+        namePickerView.selectRow(searchUserNumber(), inComponent: 0, animated: true)
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,7 +54,7 @@ class RMCalculateViewController: UIViewController, UIPickerViewDelegate, UIPicke
     func searchUserNumber() -> Int {
         let userDataDicArray: [NSDictionary] = getUserDataDicArray()
         for i in 0..<userDataDicArray.count {
-            print("userSelected: \(app.userSelected)")
+            print("-----------------------userSelected: \(app.userSelected)")
             if userDataDicArray[i]["userName"] as? String == app.userSelected {
                 print("searchUserNumber(): \(i)")
                 return i

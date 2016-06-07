@@ -248,17 +248,21 @@ class MuscleHypertrophyController: UIViewController {
     }
     
     func getUserStatus() -> NSDictionary {
-        let userDataObjects = app.myUserDefault.objectForKey("userData")
-        let userDataDicArray: [NSDictionary] = userDataObjects as! [NSDictionary]
-        for userDataDic in userDataDicArray {
-            if userDataDic["userName"] as? String == app.userSelected {
-                print("userWeight: \(userDataDic["userWeight"])")
-                print("userLeps: \(userDataDic["userLeps"])")
-                return userDataDic
+        print("userSelected in hypertrophy: \(app.userSelected)")
+        if app.userSelected != nil {
+            let userDataObjects = app.myUserDefault.objectForKey("userData")
+            let userDataDicArray: [NSDictionary] = userDataObjects as! [NSDictionary]
+            for userDataDic in userDataDicArray {
+                if userDataDic["userName"] as? String == app.userSelected {
+                    print("userWeight: \(userDataDic["userWeight"])")
+                    print("userLeps: \(userDataDic["userLeps"])")
+                    return userDataDic
+                }
             }
         }
-        let nilDic: NSDictionary = ["userName": "No Selected", "userWeights": 0.0, "userLeps": 0]
+        let nilDic: NSDictionary = ["userName": "No Selected", "userWeight": 0.0, "userLeps": 0]
         return nilDic
+        
     }
     
     //1RM値を計算する関数

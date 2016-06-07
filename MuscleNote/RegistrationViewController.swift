@@ -101,6 +101,7 @@ class RegistrationViewController: UIViewController {
                         userDataDicArray.append(userData.GetUserData())
                         app.myUserDefault.setObject(userDataDicArray, forKey: "userData")
                         SweetAlert().showAlert("Success!!!", subTitle: "You registed successfully.", style: AlertStyle.Success)
+                        app.userSelected = name
                     } else {
                         SweetAlert().showAlert("Incorrect!!!", subTitle: "This status is illegality.", style: AlertStyle.Error)
                     }
@@ -115,6 +116,7 @@ class RegistrationViewController: UIViewController {
                     let userDataDicArray: [NSDictionary] = [userData.GetUserData()]
                     app.myUserDefault.setObject(userDataDicArray, forKey: "userData")
                     SweetAlert().showAlert("Success!!!", subTitle: "You registed successfully.", style: AlertStyle.Success)
+                    app.userSelected = name
                 } else {
                     SweetAlert().showAlert("Incorrect!!!", subTitle: "This status is illegality.", style: AlertStyle.Error)
                 }
